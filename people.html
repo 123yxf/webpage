@@ -93,6 +93,40 @@
             font-weight: bold;
         }
 
+        /* 学生部分 */
+        .students {
+            margin-top: 50px;
+        }
+
+        .students h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .student-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .student-card {
+            text-align: center;
+            margin: 15px;
+        }
+
+        .student-card img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .student-card p {
+            margin-top: 10px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             .person {
                 flex-direction: column;
@@ -102,6 +136,11 @@
                 margin: 0 auto 20px;
                 width: 100%;
                 max-width: 300px;
+            }
+
+            .student-gallery {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -118,13 +157,13 @@
             
             <!-- 文本部分 -->
             <div class="person-content">
-                <h2>王德甫</h2>
+                <h2>王德甫 | Prof. Defu Wang</h2>
                 <p>
                     王德甫，北京大学微基电子学研究中心副研究员。
                     <br><br>
-                    ......
+                    主要研究领域是碳纳米管集成电路......
                     <br><br>
-                    ......
+                    曾获......
                 </p>
             </div>
         </div>
@@ -137,6 +176,28 @@
                 <li><span>2014/11 - 2015/11：</span>硕士，......</li>
                 <li><span>2008/08 - 2012/07：</span>本科，......</li>
             </ul>
+        </div>
+
+        <!-- 学生部分 -->
+        <div class="students">
+            <h2>学生 | Students</h2>
+            <div class="student-gallery">
+                <!-- 学生 1 -->
+                <div class="student-card">
+                    <img src="https://123yxf.github.io/webpage/Tom.jpg" alt="学生1">
+                    <p>Tom</p>
+                </div>
+                <!-- 学生 2 -->
+                <div class="student-card">
+                    <img src="https://123yxf.github.io/webpage/XTArmor.jpg" alt="学生2">
+                    <p>刑天铠甲</p>
+                </div>
+                <!-- 学生 3 -->
+                <div class="student-card">
+                    <img src="https://123yxf.github.io/webpage/EmperorSpiderman.jpg" alt="学生3">
+                    <p>帝皇铠甲</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
