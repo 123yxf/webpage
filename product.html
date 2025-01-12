@@ -15,7 +15,24 @@
             align-items: center;   /* 垂直居中 */
             min-height: 100vh;      /* 占据全屏 */
         }
+        /*导航栏*/
+        .navigation {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1;
+        }
 
+        .navigation a {
+            color: black;
+            font-size: 1.5em;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
         /* 内容区域 */
         .content-container {
             width: 60%; /* 内容宽度为页面的60% */
@@ -55,6 +72,12 @@
     </style>
 </head>
 <body>
+    <!-- 导航栏 -->
+    <div class="navigation">
+        <a href="https://123yxf.github.io/webpage/index">首页</a>
+        <a href="https://123yxf.github.io/webpage/people">人员</a>
+        <a href="https://123yxf.github.io/webpage/product">作品</a>
+    </div>
     <!-- 主内容容器 -->
     <div class="content-container">
         <!-- 文字描述部分 -->
