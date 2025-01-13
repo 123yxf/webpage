@@ -147,18 +147,29 @@
 
         @media (max-width: 768px) {
             .person {
-                flex-direction: column;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: stretch; /* 确保子元素等高 */
+                margin-bottom: 40px;
             }
 
             .person img {
-                margin: 0 auto 20px;
-                width: 100%;
-                max-width: 300px;
+                
+               
+                border-radius: 5px;
+                margin-right: 20px;
+            
+                height: 1000px; /* 图片高度自动填充，与文字区域等高 */
+                width:auto;
+                object-fit: cover; /* 确保图片按比例裁剪 */
             }
 
-            .student-gallery {
+            .person-content {
+                flex: 1;
+                display: flex;
                 flex-direction: column;
-                align-items: center;
+                justify-content: center; /* 文字垂直居中 */
+                min-width: 0; /* 防止文字溢出 */
             }
         }
     </style>
@@ -185,15 +196,12 @@
                 <h2>王德甫 | Prof. Defu Wang</h2>
                 <p>
                     王德甫，北京大学微基电子学研究中心副研究员。
-                    <br><br>
-                    主要研究领域是碳纳米管集成电路......
-                    <br><br>
-                    曾获......
+                    主要研究下一代高性能的米波半导体射频器件及电路及系统的集成度与高性能的极限。探索基于碳基封装晶片管的无线通信系统及应用。探索高功率米波及大赫兹频率范围的高性能电路架构。
                 </p>
             </div>
         </div>
 
-        <!-- 教育经历 -->
+        <!-- 教育经历
         <div class="education">
             <h2>教育经历 | Education Experience</h2>
             <ul>
@@ -201,7 +209,7 @@
                 <li><span>2014/11 - 2015/11：</span>硕士，......</li>
                 <li><span>2008/08 - 2012/07：</span>本科，......</li>
             </ul>
-        </div>
+        </div> -->
 
         <!-- 学生部分 -->
         <div class="students">
