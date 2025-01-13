@@ -14,9 +14,15 @@
             overflow-x: hidden; /* 防止横向滚动 */
         }
 
+        /* 统一容器样式 */
+        .container {
+            width: 60%; /* 页面内容宽度占比 60% */
+            margin: 0 auto; /* 居中显示 */
+        }
+
         /* 上半部分背景图片 */
         .hero {
-            background-image: url('https://123yxf.github.io/webpage/wdf.jpg'); /* 替换为您的图片 URL */
+            background-image: url('https://123yxf.github.io/webpage/jerry.jpg'); /* 替换为您的图片 URL */
             background-size: contain; /* 背景图片覆盖整个区域 */
             background-position: center; /* 背景居中 */
             background-repeat: no-repeat;
@@ -35,26 +41,6 @@
             font-size: 2em; /* 设置字体大小 */
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* 给文字加个阴影，使其更易阅读 */
             font-weight: bold;
-        }
-
-        /* 上半部分的文字样式，右上角 */
-        .hero .content {
-            position: absolute; /* 绝对定位，使其固定在容器内 */
-            top: 10px; /* 距离顶部一定距离 */
-            right: 20px; /* 距离右侧一定距离 */
-            font-size: 2em; /* 设置字体大小 */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* 给文字加个阴影，使其更易阅读 */
-        }
-
-        /* 设置链接的样式 */
-        .hero .content a {
-            color: white; /* 设置文字颜色为白色 */
-            text-decoration: none; /* 去掉默认的下划线 */
-            margin-right: 20px; /* 添加右边距 */
-        }
-
-        .hero .content a:hover {
-            text-decoration: underline; /* 鼠标悬停时添加下划线 */
         }
 
         /* 导航栏 */
@@ -76,44 +62,77 @@
             text-decoration: underline;
         }
 
-        /* 下半部分的样式 */
+        /* 下半部分的文字描述区域 */
         .description {
-            padding: 40px;
+            padding: 40px 0;
             background-color: #f9f9f9;
             font-size: 1.2em;
         }
 
-        /* 顶部文字样式 */
         .description h1 {
             text-align: center;
-            font-size: 2.5em; /* 设置字体大小 */
+            font-size: 2.5em;
             font-weight: bold;
         }
 
-        /* 中间文字样式 */
         .description .subtext {
             font-size: 1.2em;
-            text-align: left;
+            text-align: justify;
             margin-top: 20px;
         }
 
-        /* 新标题 "欢迎加入！" 的样式 */
         .description .welcome {
             font-size: 2.5em;
             text-align: center;
             margin-top: 40px;
         }
 
-        /* 最下面文字样式 */
         .description .requirements {
             font-size: 1.2em;
-            text-align: left;
+            text-align: justify;
             margin-top: 20px;
         }
 
-        /* 可选：设置一些响应式设计，使文字在小屏幕上更加适应 */
+        /* 嵌入内容模块 */
+        .embedded-content {
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .embedded-content .text-content {
+            padding: 20px;
+        }
+
+        .embedded-content h1 {
+            font-size: 24px;
+            color: #800000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .embedded-content p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .embedded-content .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 响应式设计 */
         @media (max-width: 768px) {
-            .hero .content {
+            .container {
+                width: 90%; /* 小屏幕时缩小宽度 */
+            }
+
+            .hero .center-text {
                 font-size: 1.5em;
             }
 
@@ -121,22 +140,13 @@
                 font-size: 2em;
             }
 
-            .description .subtext {
-                font-size: 1em;
-            }
-
-            .description .welcome {
-                font-size: 2em;
-            }
-
-            .description .requirements {
-                font-size: 1em;
+            .embedded-content h1 {
+                font-size: 20px;
             }
         }
     </style>
 </head>
 <body>
-
     <!-- 导航栏 -->
     <div class="navigation">
         <a href="https://123yxf.github.io/webpage/index">首页</a>
@@ -144,34 +154,46 @@
         <a href="https://123yxf.github.io/webpage/product">作品</a>
     </div>
 
-    <!-- 上半部分 背景图片区域 -->
-    <div class="hero">
-        <div class="center-text">
-            <!-- 背景图中央文字 -->
-            北京大学碳基芯片 王德甫课题组
+    <!-- 页面主要内容容器 -->
+    <div class="container">
+        <!-- 上半部分背景图片区域 -->
+        <div class="hero">
+            <div class="center-text">
+                北京大学碳基芯片 王德甫课题组
+            </div>
+        </div>
+
+        <!-- 嵌入的内容模块 -->
+        <div class="embedded-content">
+            <div class="text-content">
+                <h1>研究方向</h1>
+                <p>
+                    研究组的主要研究方向为：<br>
+                    1. 研究下一代高性能的米波半导体射频器件及电路及系统的集成度与高性能的极限。<br>
+                    2. 探索基于碳基封装晶片管的无线通信系统及应用。<br>
+                    3. 探索高功率米波及大赫兹频率范围的高性能电路架构。<br>
+                    <br>
+                    在现代通信和感知领域，高性能的射频器件和电路显得尤为重要，特别是针对微型化、宽带化及高效能等需求。
+                    我们的研究关注如何实现高效低功耗设计，并在宽频范围内提供可靠的解决方案。
+                </p>
+            </div>
+            <div class="image-container">
+                <image src="https://123yxf.github.io/webpage/product1.jpg" alt="图片1"></image>
+                <image src="https://123yxf.github.io/webpage/product2.jpg" alt="图片2"></image>
+                <image src="https://123yxf.github.io/webpage/product3.jpg" alt="图片3"></image>
+                <image src="https://123yxf.github.io/webpage/product4.jpg" alt="图片4"></image>
+                <image src="https://123yxf.github.io/webpage/product5.jpg" alt="图片5"></image>
+            </div>
+        </div>
+        <!-- 下半部分 文字描述区域 -->
+        <div class="description">
+            <div class="welcome">
+                欢迎加入！
+            </div>
+            <div class="requirements">
+                招生要求：123456
+            </div>
         </div>
     </div>
-
-    <!-- 下半部分 文字描述区域 -->
-    <div class="description">
-        <!-- 顶部居中文字 -->
-        <h1>王德甫 北京大学副研究员 博导</h1>
-
-        <!-- 下方文字描述，左对齐 -->
-        <div class="subtext">
-            课题组主要研究碳纳米管集成电路
-        </div>
-
-        <!-- 新标题 "欢迎加入！" -->
-        <div class="welcome">
-            欢迎加入！
-        </div>
-
-        <!-- 最下面的招生要求 -->
-        <div class="requirements">
-            招生要求：123456
-        </div>
-    </div>
-
 </body>
 </html>
